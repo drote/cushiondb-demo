@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CushionDB Demo</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app-1">
+		<ul>
+			<li v-for="note in notes">
+				{{ note.text }}
+			</li>
+		</ul>
+
+		<label for="note">Add a new note:</label><br/>
+		<input id="note-input" type="note" name="text">
+		<button id="save-note" v-on:click="saveNote">Save</button>
+
+		<button id="log-in" v-if="!signedIn" v-on:click="logIn">Log in</button>
+		<button id="log-out" v-if="signedIn" v-on:click="logOut">Log out</button>
+
+		<button id="subscribeToNotifications" v-if="signedIn" v-on:click="subscribe">Subscribe device to notifications</button>
+	</div>
+	<script type="text/javascript" src="./bundle.js"></script>
+</body>
+</html>
